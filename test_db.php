@@ -4,48 +4,54 @@ include 'db.php';
 $db = new DB();
 
 // Test Insert
-$title = "Craking The Coding Interview";
-$author = "Gayle Laakman Mcdowell";
+$title = "Cracking The Coding Interview";
+$author = "Gayle Laakman McDowell";
 $published_year = "2020";
 
-$db->insert_book($title, $author, $published_year);
+// Inserting into the 'books_for_rent' table
+$db->insertBook('books_for_rent', $title, $author, $published_year);
 
-$title = "Pep Guardiola Another Way Of Winning";
+$title = "Pep Guardiola: Another Way Of Winning";
 $author = "Guillem Balague";
 $published_year = "2016";
 
-$db->insert_book($title, $author, $published_year);
+// Inserting into the 'books_for_sale' table
+$db->insertBook('books_for_sale', $title, $author, $published_year);
 
 // Test Read
-$books = $db->get_books();
+$booksForRent = $db->getBooks('books_for_rent');
+$booksForSale = $db->getBooks('books_for_sale');
 
-echo "Books after insert:\n";
-print_r($books);
+echo "Books for Rent after insert:\n";
+print_r($booksForRent);
+
+echo "\nBooks for Sale after insert:\n";
+print_r($booksForSale);
 
 // Test Update
-$bookToUpdate = $books[0];
-$idToUpdate = $bookToUpdate['id'];
-$newTitle = "New Title";
-$newAuthor = "New Author";
-$newPublishedYear = "2024";
+$bookToUpdateForRent = $booksForRent[0];
+$idToUpdateForRent = $bookToUpdateForRent['id'];
+$newTitleForRent = "New Title for Rent";
+$newAuthorForRent = "New Author for Rent";
+$newPublishedYearForRent = "2024";
 
-$db->update_book($idToUpdate, $newTitle, $newAuthor, $newPublishedYear);
+$db->updateBook('books_for_rent', $idToUpdateForRent, $newTitleForRent, $newAuthorForRent, $newPublishedYearForRent);
 
 // Test Read after Update
-$updatedBooks = $db->get_books();
+$updatedBooksForRent = $db->getBooks('books_for_rent');
 
-echo "\nBooks after update:\n";
-print_r($updatedBooks);
+echo "\nBooks for Rent after update:\n";
+print_r($updatedBooksForRent);
 
 // Test Delete
-$bookToDelete = $updatedBooks[0];
-$idToDelete = $bookToDelete['id'];
+$bookToDeleteForRent = $updatedBooksForRent[0];
+$idToDeleteForRent = $bookToDeleteForRent['id'];
 
-$db->delete_book($idToDelete);
+$db->deleteBook('books_for_rent', $idToDeleteForRent);
 
 // Test Read after Delete
-$booksAfterDelete = $db->get_books();
+$booksAfterDeleteForRent = $db->getBooks('books_for_rent');
 
-echo "\nBooks after delete:\n";
-print_r($booksAfterDelete);
+echo "\nBooks for Rent after delete:\n";
+print_r($booksAfterDeleteForRent);
 ?>

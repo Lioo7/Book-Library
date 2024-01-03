@@ -14,17 +14,19 @@ class DB {
         }
     }
 
-    public function insert_book($title, $author, $published_year) {
-        $sql = "INSERT INTO books (title, author, published_year) VALUES (?, ?, ?)";
+    public function insertBook($table, $title, $author, $published_year) {
+        $sql = "INSERT INTO $table (title, author, published_year) VALUES (?, ?, ?)";
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param("sss", $title, $author, $published_year);
         $stmt->execute();
         $stmt->close();
     }
 
-    public function get_books() {
-        $sql = "SELECT * FROM books";
-        $result = $this->conn->query($sql);
+    public function getBooks($table) {
+        $sql = "SELECT * FROM $table";
+        $stmt = $this->conn->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
         $books = [];
 
@@ -35,16 +37,16 @@ class DB {
         return $books;
     }
 
-    public function update_book($id, $title, $author, $published_year) {
-        $sql = "UPDATE books SET title = ?, author = ?, published_year = ? WHERE id = ?";
+    public function updateBook($table, $id, $title, $author, $published_year) {
+        $sql = "UPDATE $table SET title = ?, author = ?, published_year = ? WHERE id = ?";
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param("sssi", $title, $author, $published_year, $id);
         $stmt->execute();
         $stmt->close();
     }
 
-    public function delete_book($id) {
-        $sql = "DELETE FROM books WHERE id = ?";
+    public function deleteBook($table, $id) {
+        $sql = "DELETE FROM $table WHERE id = ?";
         $stmt = $this->conn->prepare($sql);
         $stmt->bind_param("i", $id);
         $stmt->execute();
