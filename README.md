@@ -1,17 +1,17 @@
 # Book Library Management System
 
-## Description:
-This project is a simple Book Library Management System implemented in PHP. It provides basic functionality to manage a collection of books, including adding, updating, and deleting book entries. The user interface is a web-based application with HTML forms for inserting, updating, and deleting books. The book details are stored in a database, and the application interacts with the database using a PHP class named `DB`.
+This PHP-based Book Library Management System project allows users to perform CRUD (Create, Read, Update, Delete) operations on a database containing books. Two tables, "Books for Rent" and "Books for Sale," are available for managing book records. Users can add, edit, and delete books through a simple web interface.
 
-## Features:
-1. **Insert Book:**
-   - Users can add a new book to the library by providing the title, author, and published year through the "Add Book" form.
+<img src="https://i.ibb.co/W5sJXpf/Screenshot-2024-01-03-at-23-14-22.png" alt="Book Library Management System">
 
-2. **Display Books:**
-   - The system displays the existing books in a table format, showing the book's ID, title, author, published year, and a "Delete" button for each entry.
+## Tables
+- **Books for Rent**: Contains records of books available for rent.
+- **Books for Sale**: Contains records of books available for sale.
 
-3. **Update Book:**
-   - Users can edit the details of an existing book using the "Edit Book" form. The form allows users to select a book from the existing entries and update its title, author, and published year.
+## CRUD Operations
+- **Create (Insert)**: Users can add new books to the library.
+- **Read**: Displays a list of books from the selected table.
+- **Update**: Allows users to modify the details of existing books.
+- **Delete**: Enables users to remove books from the library.
 
-4. **Delete Book:**
-   - Books can be deleted from the library by clicking the "Delete" button associated with each book entry in the table.
+To use the system, configure the database details in the `config.php` file and access `book_library.php` through a web server.
