@@ -43,4 +43,7 @@ Temporary Items
 
 config.php
 
+# Ignore Phar files
+*.phar
+
 # End of https://www.toptal.com/developers/gitignore/api/macos

@@ -48,6 +48,4 @@ $booksAfterDelete = $db->get_books();
 
 echo "\nBooks after delete:\n";
 print_r($booksAfterDelete);
-
-// Destructor of DB class will automatically close the connection when the script ends.
 ?>
