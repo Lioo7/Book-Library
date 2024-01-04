@@ -2,7 +2,7 @@
 
 This PHP-based Book Library Management System project allows users to perform CRUD (Create, Read, Update, Delete) operations on a database containing books. Two tables, "Books for Rent" and "Books for Sale," are available for managing book records. Users can add, edit, and delete books through a simple web interface.
 
-<img src="https://i.ibb.co/W5sJXpf/Screenshot-2024-01-03-at-23-14-22.png" alt="Book Library Management System">
+![Book Library Management System](https://i.ibb.co/W5sJXpf/Screenshot-2024-01-03-at-23-14-22.png)
 
 ## Tables
 - **Books for Rent**: Contains records of books available for rent.
@@ -14,4 +14,11 @@ This PHP-based Book Library Management System project allows users to perform CR
 - **Update**: Allows users to modify the details of existing books.
 - **Delete**: Enables users to remove books from the library.
 
-To use the system, configure the database details in the `config.php` file and access `book_library.php` through a web server.
+## Getting Started
+To use the system, follow these steps:
+
+1. Create the required database and configure the details in the `config.php` file.
+2. Run the "initialize.php" file for the first time to set up the necessary tables and initial data.
+3. Access the Book Library Management System by opening `book_library.php` through a web server.
+
+This system provides a user-friendly interface for efficiently managing your book library. Start organizing and tracking your books today!
