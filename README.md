@@ -20,5 +20,3 @@ To use the system, follow these steps:
 1. Create the required database and configure the details in the `config.php` file.
 2. Run the "initialize.php" file for the first time to set up the necessary tables and initial data.
 3. Access the Book Library Management System by opening `book_library.php` through a web server.
-
-This system provides a user-friendly interface for efficiently managing your book library. Start organizing and tracking your books today!
