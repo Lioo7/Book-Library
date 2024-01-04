@@ -1,4 +1,4 @@
-# Book Library Management System
+# Book Library Management System 📚
 
 This PHP-based Book Library Management System project allows users to perform CRUD (Create, Read, Update, Delete) operations on a database containing books. Two tables, "Books for Rent" and "Books for Sale," are available for managing book records. Users can add, edit, and delete books through a simple web interface.
 
